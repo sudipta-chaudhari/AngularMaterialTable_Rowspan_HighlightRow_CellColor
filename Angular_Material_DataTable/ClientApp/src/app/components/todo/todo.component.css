@@ -1,0 +1,23 @@
+.mat-row.highlighted {
+  background: lightblue;
+}
+
+table {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  min-width: 500px;
+}
+
+.mat-header-cell, .mat-sort-header {
+  background-color: darksalmon;
+}
+
+:host ::ng-deep .mat-sort-header-container {
+  display: flex;
+  justify-content: center;
+  font-size: medium;
+  font-weight: bold;
+  text-decoration:underline;
+}
+

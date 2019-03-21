@@ -1,0 +1,40 @@
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8" border="1">
+
+    <ng-container matColumnDef="userId">
+      <tr>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> User Id </th>
+        <td mat-cell *matCellDef="let element; let i = index"
+            [style.display]="getRowSpan('userId', i) ? '' : 'none'"
+            [attr.rowspan]="getRowSpan('userId', i)">
+          {{element.userId}}
+        </td>
+      </tr>
+    </ng-container>
+
+    <ng-container matColumnDef="id">
+      <tr>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Id </th>
+        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+      </tr>
+    </ng-container>
+
+    <ng-container matColumnDef="title">
+      <tr>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Title </th>
+        <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+      <tr>
+    </ng-container>
+
+    <ng-container matColumnDef="completed">
+      <tr>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Completed </th>
+        <td mat-cell *matCellDef="let element" [ngStyle]="{'background-color': element.completed === true ? 'green' : 'red'}"> {{element.completed}} </td>
+      <tr>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;" [ngClass]="{highlighted: selectedRowIndex == row.id}" (mouseover)="highlight(row)"></tr>
+  </table>
+  <mat-paginator [pageSizeOptions]="[5, 10, 20, 30, 40, 50]" showFirstLastButtons></mat-paginator>
+</div>
