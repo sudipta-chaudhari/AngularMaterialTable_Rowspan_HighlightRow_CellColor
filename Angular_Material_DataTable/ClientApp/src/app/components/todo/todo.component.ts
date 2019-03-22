@@ -1,5 +1,3 @@
-//Ref : https://stackblitz.com/edit/angular-lnahlh?file=app%2Ftable-basic-example.ts
-
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource, MatSort, MatPaginator } from '@angular/material';
 import { TodoService } from '../../services/todo/todo.service';
